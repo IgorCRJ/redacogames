@@ -1,0 +1,169 @@
+/* 
+Ordem de hierarquia:
+1 - IMPORTANT!
+2 - Inline css (<div style="background: red">)
+3 - Tag <style></style>
+4 - Arquivo .css
+5 - tag -> id -> class
+*/
+
+/* 
+Para estudar:
+- Desenhar no papel o layout do site.
+- Propriedades background (size, repeat, position ) etc.
+		background: blue;
+		background-size: auto;
+		background-position: center right;
+		background-repeat: no-repeat;
+
+- Procurar tipos de cursores.
+- CSS Pseudo-classes (hover etc)
+- Seletor nth:child(), :first-child, :last-child
+- Seletores hierarquicos: ' ', >, +, ~ 
+- Instalar git no windows
+- Subir o código para o repositório ( Como criar repositorio no github)
+
+Para praticar:
+
+- Todo elemento HTML deve conter pelo menos uma classe.
+- Refatorar nomes das classes d1,d2,d3,d4. (container/wrapper/box)
+- CTRL + Space = autocomplete
+- Pseudo elementos
+
+*/
+
+body,
+html {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	max-height: 100%;
+}
+
+.header {
+	font-family: 'Ranchers', cursive;
+	padding-left: 500px;
+	width: 60%;
+	margin-left: 5%;
+	margin-bottom: 2px;
+	padding-top: 2px;
+	align-items: center;
+	display: flex;
+	background-image: url(https://sm.ign.com/t/ign_br/feature/4/43-big-gam/43-big-games-coming-in-2017_16fc.h720.jpg);
+	cursor: pointer;
+}
+
+.header::before {
+	content: 'Notícias de Games'
+}
+.header::after {
+	content: 'É aqui!'
+}
+.texto {
+	color: black;
+	font-size: 140px;
+	font-weight: 100px;
+}
+
+.texto:hover {
+	color: red;
+}
+
+.subtexto {
+	color: gray;
+	font-size: 20px;
+	font-weight: 100px;
+}
+
+.thick-red-border {
+	border-color: red;
+	border-width: 5px;
+	border-style: solid;
+	border-radius: 5px;
+}
+
+.main {
+	margin-top: 5px;
+	padding-bottom: 100px;
+}
+
+.container {
+	height: 300px;
+	display: grid;
+	grid-template-columns:repeat(4, 1fr);
+	grid-auto-rows: minmax(400px, auto);
+	grid-gap: 1em;
+	width: 70%;
+	padding: 210px;
+	padding-left: 5px;
+	margin-left: 135px;
+}
+
+.noticia1 {
+	background: darkblue;
+	text-align: center;
+	background-image: url(image/gp1.jpg);
+	
+
+}
+
+.noticia2 {
+	background: darkred;
+	text-align: center;
+	
+	
+}
+
+.noticia3 {
+	background: tomato;
+	text-align: center;
+}
+
+.noticia4 {
+	background: yellow;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Primeira forma de colocar borda no último filho do container */
+
+/* .container > div:nth-child(4) {
+	border: 2px solid red;
+} */
+
+/*.container > div:last-child {
+	border: 2px solid red;
+}*/
+
+.container {
+	color: lightgrey;
+}
+
+#menu ul {
+	margin: 0;
+	background-color: black;
+	list-style: none;
+}
+
+#menu ul li {
+	display: inline;
+}
+
+#menu ul li a {
+	padding: 10px 30px;
+	font-size: 25px;
+	display: inline-block;
+	color: white;
+	text-decoration: none;
+	font-family: 'DotGothic16', sans-serif;
+}
